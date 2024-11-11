@@ -91,18 +91,52 @@ button{
 }
 
 /* Diferencia cores para naipes */
-.suit-copas, .suit-ouros {
+.suit-copas, .suit-ouros, .suit-Copas, .suit-Ouros {
     color: red;
 }
-.suit-espadas, .suit-paus {
+.suit-espadas, .suit-paus, .suit-Espadas, .suit-Paus {
     color: black;
 }
 
 .card-value{
     vertical-align:text-top;
     text-align: left;
+    font-size: large;
 }
 .card-suit{
     vertical-align: bottom;
     text-align: right;
 }
+
+#mesa{
+    visibility: hidden;
+}
+
+#botaoStartGame{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 100;
+}
+
+#botaoStartGame p{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#botaoStartGame button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }

@@ -41,30 +41,35 @@ function shuffleDeck() {
 }
 
 
-window.onload = function() {
-    function displayTrunfoCard(trunfo) {
-        const trunfoElement = document.getElementById("trunfo-card-front");
-        trunfoElement.innerHTML = "<div class='card-value'>"+trunfo['name']+"</div><div class='card-suit'>"+getSuitSymbol(trunfo['suit'])+"</div>";
-    }
+window.onload = function() {    
 
     // Supondo que você já tenha definido o trunfo, exiba-o:
-    const trunfo = { name: "A", suit: "Ouros" }; // Exemplo de trunfo
-    displayTrunfoCard(trunfo);
+    //const trunfo = { name: "A", suit: "Ouros" }; // Exemplo de trunfo
+    //displayTrunfoCard(trunfo);
 
-    // Função para obter o símbolo do naipe
-    function getSuitSymbol(suit) {
-        switch (suit) {
-            case "Copas": return "♥";
-            case "Espadas": return "♠";
-            case "Ouros": return "♦";
-            case "Paus": return "♣";
-            default: return "";
-        }
-    }
+   
+
+    document.getElementById("start-game").addEventListener("click", startGame);
 }
 
+//funcao para distribuir as cartas 
+function distribuirDeck() {    
+    for(let i = 0; i < 3; i++) {
+        let cartaParaJogador = deck.shift();
+        playerHand.push(cartaParaJogador);
+    }
+    for(let i = 0; i < 3; i++) {       
+        let cartaParaComputador = deck.shift();
+        computerHand.push(cartaParaComputador);
+    }
+    trunfoCard = deck.shift();
+}
 
-document.getElementById("start-game").addEventListener("click", startGame);
+//Funcao para apresentar a carta Trunfo
+function displayTrunfoCard(trunfo) {
+    const trunfoElement = document.getElementById("trunfo-card-front");
+    trunfoElement.innerHTML = "<div class='card-value'>"+trunfo['name']+"</div><div class='card-suit'>"+getSuitSymbol(trunfo['suit'])+"</div>";
+}
 
 // Função para iniciar o jogo
 function startGame() {
@@ -72,4 +77,35 @@ function startGame() {
     shuffleDeck();    
     playerScore = 0;
     computerScore = 0;
+    distribuirDeck();
+    exibeMesa();
+}
+
+//funcao para depois desenvolver a animacao de distribuicao de cartas
+function exibeMesa(){
+    document.getElementById("mesa").style.visibility = "visible";
+    document.getElementById("botaoStartGame").style.visibility = "hidden";
+    displayTrunfoCard(trunfoCard);
+
+    //mostrar a mao do usuario
+    const maoUser = document.getElementById("maoUSER");
+    maoUser.innerHTML="";
+    playerHand.forEach(exibePlayerHand);
+}
+
+function exibePlayerHand(item){
+    const maoUser = document.getElementById("maoUSER");
+    const div = "<div class='card suit-"+item['suit']+"'><div class='card-value'>"+item['name']+"</div><div class='card-suit'>"+getSuitSymbol(item['suit'])+"</div></div>";
+    maoUser.innerHTML += div;
+}
+
+ // Função para obter o símbolo do naipe
+ function getSuitSymbol(suit) {
+    switch (suit) {
+        case "Copas": return "♥";
+        case "Espadas": return "♠";
+        case "Ouros": return "♦";
+        case "Paus": return "♣";
+        default: return "";
+    }
 }
