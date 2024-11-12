@@ -1,1 +1,144 @@
 /*CSS da BISCA*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #4CAF50;
+}
+
+h1{
+    text-align: center;    
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Tela de Joogo */
+.game-board{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border: 5px inset red;
+    margin: 5% 10%;    
+    overflow: hidden;
+}
+
+.card {
+    width: 80px;
+    height: 120px;
+    background-color: white;
+    color: black;
+    border: 2px solid #000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#maoCPU{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+#maoUSER{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+
+.card.back {
+    background-color: #555;
+    position: absolute;
+    top: -10px;
+    left: -70px;
+    z-index: 1;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card.front {
+    z-index: 2;
+}
+
+/* Adicione estilos para o trunfo */
+#trunfo-card-front {
+    font-size: 24px;    
+}
+
+#deck {
+    position: relative;
+    margin: 20px auto;
+    width: 100px;
+    height: 120px;
+}
+
+/* Diferencia cores para naipes */
+.suit-copas, .suit-ouros, .suit-Copas, .suit-Ouros {
+    color: red;
+}
+.suit-espadas, .suit-paus, .suit-Espadas, .suit-Paus {
+    color: black;
+}
+
+.card-value{
+    vertical-align:text-top;
+    text-align: left;
+    font-size: large;
+}
+.card-suit{
+    vertical-align: bottom;
+    text-align: right;
+}
+
+#mesa{
+    visibility: hidden;
+}
+
+#botaoStartGame{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 100;
+}
+
+#botaoStartGame p{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#botaoStartGame button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  

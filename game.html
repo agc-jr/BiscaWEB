@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo de Bisca</title>
+    <link rel="shortcut icon" href="./img/bisca.ico" />
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
-    <h1>Jogo de Bisca</h1>
+<body>    
+    <div class="game-board">
+        <div id="botaoStartGame">
+            <p>BISCA</p>
+            <button id="start-game">Iniciar Jogo</button>
+        </div>
+        <div id="mesa">
+            <h1>Jogo de Bisca</h1>        
+            <div id="maoCPU">
+                <div class="card "></div>
+                <div class="card "></div>
+                <div class="card "></div>
+            </div>
+            
+            <!-- Monte do Trunfo -->
+            <div id="deck">
+                <div id="trunfo-card-back" class="card back"></div>
+                <div id="trunfo-card-front" class="card"></div>
+            </div>
+
+            <div id="maoUSER">
+                <div class="card "></div>
+                <div class="card "></div>
+                <div class="card "></div>
+            </div>
+        </div>            
+    </div>
 </body>
 </html>
+
+
