@@ -91,6 +91,11 @@ function exibeMesa(){
     const maoUser = document.getElementById("maoUSER");
     maoUser.innerHTML="";
     playerHand.forEach(exibePlayerHand);
+
+    //distribui as cartas da CPU
+    const maoCPU = document.getElementById("maoCPU");
+    maoCPU.innerHTML="";
+    computerHand.forEach(exibeComputerHand);
 }
 
 function exibePlayerHand(item){
@@ -98,6 +103,13 @@ function exibePlayerHand(item){
     const div = "<div class='card suit-"+item['suit']+"'><div class='card-value'>"+item['name']+"</div><div class='card-suit'>"+getSuitSymbol(item['suit'])+"</div></div>";
     maoUser.innerHTML += div;
 }
+
+function exibeComputerHand(item){
+    const maoCPU = document.getElementById("maoCPU");
+    const div = "<div class='card suit-"+item['suit']+"'><div class='card-value'>"+item['name']+"</div><div class='card-suit'>"+getSuitSymbol(item['suit'])+"</div></div>";
+    maoCPU.innerHTML += div;
+}
+
 
  // Função para obter o símbolo do naipe
  function getSuitSymbol(suit) {

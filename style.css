@@ -11,7 +11,12 @@ body{
 }
 
 h1{
-    text-align: center;    
+    text-align: center;
+    color: bisque;
+    text-transform: full-width;
+    text-decoration-line: line-through;
+    text-orientation: mixed;
+    font-style: italic; 
 }
 
 button{
@@ -101,7 +106,7 @@ button{
 .card-value{
     vertical-align:text-top;
     text-align: left;
-    font-size: large;
+    font-size: small;
 }
 .card-suit{
     vertical-align: bottom;
@@ -141,4 +146,3 @@ button{
     cursor: pointer;
   }
 
-  
